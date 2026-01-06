@@ -20,7 +20,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff7635 0%, #c23932 100%);
             color: white;
             padding: 48px 20px;
             text-align: center;
@@ -28,11 +28,13 @@
 
         .header h1 {
             font-size: 32px;
+            font-weight: 700;
         }
 
         .header p {
             opacity: 0.9;
             margin-top: 8px;
+            font-size: 18px;
         }
 
         .content {
@@ -47,6 +49,15 @@
             color: #1a1a2e;
             margin: 32px 0 16px;
             font-size: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #c23932;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         p {
@@ -56,40 +67,50 @@
         .back {
             display: inline-block;
             margin-bottom: 24px;
-            color: #667eea;
+            color: #ff7635;
             text-decoration: none;
+            font-weight: 500;
         }
 
         .faq {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 24px;
             border-radius: 12px;
             margin-bottom: 16px;
-        }
-
-        .faq h3 {
-            color: #667eea;
-            font-size: 16px;
-            margin-bottom: 8px;
+            border: 1px solid #eee;
         }
 
         .contact-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff7635 0%, #c23932 100%);
             color: white;
             padding: 32px;
             border-radius: 16px;
-            margin-top: 32px;
+            margin-top: 48px;
             text-align: center;
+            box-shadow: 0 10px 20px rgba(194, 57, 50, 0.2);
         }
 
         .contact-card h2 {
             color: white;
             margin: 0 0 16px;
+            border: none;
         }
 
         .contact-card a {
             color: white;
             font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -97,7 +118,7 @@
 <body>
     <div class="header">
         <h1>Support</h1>
-        <p>Mai - Turn Screen Time into Study Time</p>
+        <p>Mai - Daily Study Tracker & AI Tools</p>
     </div>
     <div class="content">
         <a href="index.html" class="back">← Back to Home</a>
@@ -105,45 +126,76 @@
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq">
-            <h3>How do I create flashcards?</h3>
-            <p>Tap the "+" button, upload a document (PDF, photo, or paste text), and Mai will automatically generate
-                flashcards from your content.</p>
+            <h3>How do I get API keys?</h3>
+            <p>Free users need to provide their own API keys:</p>
+            <ul>
+                <li><strong>Google Gemini</strong>: Visit ai.google.dev, sign in, and create an API key</li>
+                <li><strong>OpenAI</strong>: Go to platform.openai.com, create an account, and generate an API key</li>
+            </ul>
+            <p>Enter your keys in Profile → API Keys.</p>
         </div>
 
         <div class="faq">
-            <h3>How does the Screen Time feature work?</h3>
-            <p>First, authorize Screen Time access in the app. Then select apps you want to block. Complete study
-                sessions (flashcards, quizzes, podcasts) to earn unlock time for those apps.</p>
+            <h3>Why isn't my podcast generating?</h3>
+            <p>Check the following:</p>
+            <ul>
+                <li>Ensure you've added valid API keys (free users)</li>
+                <li>Verify you haven't reached your daily limit</li>
+                <li>Make sure your input text is at least 100 words</li>
+                <li>Check your internet connection</li>
+                <li>Verify your API key is active and has credits</li>
+            </ul>
         </div>
 
         <div class="faq">
-            <h3>Why isn't speech recognition working?</h3>
-            <p>Make sure you've granted microphone permission in Settings > Mai. Speech recognition also requires an
-                internet connection for non-English languages.</p>
+            <h3>How do I reset my trial limits?</h3>
+            <p>Trial limits reset automatically every 24 hours. You can check when your limits reset in Profile → Trial
+                Usage.</p>
+            <p>Upgrade to Mai Pro for generous daily allowances.</p>
         </div>
 
         <div class="faq">
-            <h3>How do I manage my subscription?</h3>
-            <p>Subscriptions are managed through the App Store. Go to Settings > [Your Name] > Subscriptions on your
-                iPhone to modify or cancel.</p>
+            <h3>Is my data private?</h3>
+            <p>Yes! All your study data is stored locally on your device. We never send your data to our servers. API
+                keys are stored securely in iOS Keychain.</p>
         </div>
 
         <div class="faq">
-            <h3>How do I delete my data?</h3>
-            <p>All your data is stored locally on your device. Uninstalling the app will delete all your data. You can
-                also reset data in the app's Settings.</p>
+            <h3>Can I export my data?</h3>
+            <p>Data export is coming in a future update. For now, you can manually copy content from generated podcasts,
+                flashcards, and study guides.</p>
         </div>
 
         <div class="faq">
-            <h3>The app blocked my apps but I can't earn unlock time. What do I do?</h3>
-            <p>You need to complete a study session (flashcards, quiz, or podcast) to earn unlock time. If you're stuck,
-                go to Settings > Screen Time > Mai and disable the extension temporarily.</p>
+            <h3>What's the difference between free and Pro?</h3>
+            <p><strong>Free Tier:</strong><br>
+                • Strictly limited (e.g. 5 chats/day)<br>
+                • Requires your own API keys for unlimited use</p>
+
+            <p><strong>Mai Pro:</strong><br>
+                • Generous daily limits (e.g. 20 chats, 3 podcasts)<br>
+                • No API keys needed<br>
+                • Priority support<br>
+                • Supports the app's development</p>
         </div>
 
         <div class="contact-card">
             <h2>Still need help?</h2>
             <p>We're here to assist you!</p>
-            <p><a href="mailto:support@maiapp.com">support@maiapp.com</a></p>
+            <p><a href="mailto:maiiosx.app@gmail.com">maiiosx.app@gmail.com</a></p>
+            <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">We typically respond within 24-48 hours.</p>
+        </div>
+
+        <div style="margin-top: 32px">
+            <h2>Report a Bug</h2>
+            <p>Found a bug? Please email us at <a href="mailto:maiiosx.app@gmail.com"
+                    style="color:#c23932">maiiosx.app@gmail.com</a> with:</p>
+            <ul>
+                <li>Description of the issue</li>
+                <li>Steps to reproduce</li>
+                <li>Your device model and iOS version</li>
+                <li>Screenshots (if applicable)</li>
+            </ul>
         </div>
     </div>
 </body>
